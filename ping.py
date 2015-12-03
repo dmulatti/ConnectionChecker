@@ -50,7 +50,7 @@ while (1):
 		log.close()	
 		connectionDown('home.mulatti.ca')
 	#delete log file if it is over 1MB
-	if (os.path.getsize('./log.txt')) > 1000000:
+	if os.path.exists ('./log.txt') and (os.path.getsize('./log.txt')) > 1000000:
 		os.remove('./log.txt') 
 	log=open('./log.txt', 'a')
 	log.write("Connection up as of %s\n" % (str(datetime.datetime.now())))
